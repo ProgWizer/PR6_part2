@@ -1,0 +1,68 @@
+﻿<Page x:Class="wpfPr4.Pages.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Page3">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT -->
+        <StackPanel Grid.Column="0">
+            <TextBlock FontSize="20" FontWeight="Bold" Text="Страница 3 — Вариант 6"/>
+
+            <!-- ФОРМУЛА КАРТИНКОЙ -->
+            <Border Margin="0,6,0,14" BorderBrush="#DDD" BorderThickness="1" CornerRadius="6" Padding="8">
+                <Image x:Name="ImgFormula3" Source="/Photo/Page3.jpg" Stretch="Uniform" Height="70"/>
+            </Border>
+
+            <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="x0:"/>
+                <TextBox x:Name="TbX0" Grid.Row="0" Grid.Column="1" Margin="0,4"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="xk:"/>
+                <TextBox x:Name="TbXk" Grid.Row="1" Grid.Column="1" Margin="0,4"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="dx:"/>
+                <TextBox x:Name="TbDx" Grid.Row="2" Grid.Column="1" Margin="0,4"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="d:"/>
+                <TextBox x:Name="TbD" Grid.Row="3" Grid.Column="1" Margin="0,4"/>
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Вычислить" Width="120" Margin="0,0,10,0" Click="Calc_Click"/>
+                <Button Content="Очистить" Width="120" Click="Clear_Click"/>
+            </StackPanel>
+
+            <TextBox x:Name="TbLog" Height="340"
+                     VerticalScrollBarVisibility="Auto"
+                     HorizontalScrollBarVisibility="Auto"
+                     IsReadOnly="True"/>
+        </StackPanel>
+
+        <!-- RIGHT -->
+        <Border Grid.Column="1" Margin="15,0,0,0" BorderBrush="#DDD" BorderThickness="1" CornerRadius="6" Padding="8">
+            <Grid>
+                <Canvas x:Name="PlotCanvas" Background="White"/>
+                <TextBlock x:Name="TbHint" Margin="8"
+                           VerticalAlignment="Top" HorizontalAlignment="Left"
+                           Foreground="Gray"
+                           Text="Нажмите «Вычислить», чтобы построить график"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

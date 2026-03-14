@@ -1,0 +1,36 @@
+﻿<Window x:Class="wpfPr4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfPr4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left" Width="190" Background="#F3F3F3" >
+                <TextBlock Text="Навигация" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <Button Content="Страница 1"
+                    ToolTip="Функция варианта 6 (формула 1)"
+                    Margin="0,0,0,8" Click="GoPage1_Click"/>
+
+                <Button Content="Страница 2"
+                    ToolTip="Кусочная функция g (вариант 6) + выбор f(x)"
+                    Margin="0,0,0,8" Click="GoPage2_Click"/>
+
+                <Button Content="Страница 3"
+                    ToolTip="Цикл + таблица значений + график (вариант 6)"
+                    Margin="0,0,0,8" Click="GoPage3_Click"/>
+
+                <Separator Margin="0,10,0,10"/>
+
+                <Button Content="Выход"
+                    ToolTip="Закрыть приложение"
+                    Click="Exit_Click"/>
+            </StackPanel>
+
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+    </Grid>
+</Window>
